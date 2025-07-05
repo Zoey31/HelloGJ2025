@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b831w2vrgdfko"]
+[gd_scene load_steps=6 format=3 uid="uid://db1n0rfy07tge"]
 
 [ext_resource type="Texture2D" uid="uid://cx7i3pba275y1" path="res://Sprites/play2.png" id="1_tqbe2"]
+[ext_resource type="PackedScene" uid="uid://da5w4764yvdlc" path="res://Scenes/image.tscn" id="2_uu8hy"]
 [ext_resource type="Texture2D" uid="uid://efbl7qer4bgt" path="res://Sprites/youtube.png" id="2_vm16r"]
 [ext_resource type="FontFile" uid="uid://c4a7umcsg8k5r" path="res://Fonts/8bit-tiny-retro.ttf" id="3_uu8hy"]
+[ext_resource type="Script" uid="uid://b7n5ple6r427a" path="res://Scripts/random_title.gd" id="4_o4nu8"]
 
-[node name="BodyYt" type="PanelContainer"]
+[node name="BodyYt" type="Panel"]
+clip_contents = true
 offset_right = 1920.0
-offset_bottom = 4192.0
+offset_bottom = 3592.0
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Panel"]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
 offset_top = 4.0
 offset_right = 1920.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.877616, 0.877616, 0.877616, 1)
 
-[node name="Logo" type="TextureRect" parent="Panel"]
+[node name="Logo" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_top = 4.0
@@ -28,14 +28,33 @@ offset_right = 467.0
 offset_bottom = 194.0
 texture = ExtResource("2_vm16r")
 
-[node name="VideoContainer" type="Control" parent="Panel"]
+[node name="VideoContainer" type="Control" parent="."]
 layout_mode = 2
 anchors_preset = 0
 offset_top = 157.0
 offset_right = 1158.0
 offset_bottom = 766.0
 
-[node name="TextureButton" type="TextureButton" parent="Panel"]
+[node name="Node2D" parent="VideoContainer" instance=ExtResource("2_uu8hy")]
+offset_left = 29.0
+offset_top = 104.0
+offset_right = 29.0
+offset_bottom = 104.0
+scale = Vector2(2.34255, 1.24)
+
+[node name="Title" type="Label" parent="VideoContainer"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 21.0
+offset_right = 296.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 60
+text = "UNTITLED"
+script = ExtResource("4_o4nu8")
+
+[node name="TextureButton" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_left = 1301.0
@@ -45,7 +64,7 @@ offset_bottom = 522.0
 texture_normal = ExtResource("1_tqbe2")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_top = 786.0
 offset_right = 262.0
@@ -54,7 +73,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Comments"
 
-[node name="TextEdit" type="TextEdit" parent="Panel"]
+[node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 868.0
@@ -66,7 +85,7 @@ theme_override_font_sizes/font_size = 50
 placeholder_text = "Type your comment here"
 wrap_mode = 1
 
-[node name="CommentsLayout" type="VBoxContainer" parent="Panel"]
+[node name="CommentsLayout" type="VBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 20.0
 offset_top = 1130.0
@@ -75,7 +94,7 @@ offset_bottom = 3524.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Comment" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -84,7 +103,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment2" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment2" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -93,7 +112,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment3" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment3" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -102,7 +121,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment4" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment4" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -111,7 +130,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment5" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment5" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -120,7 +139,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment6" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment6" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -129,7 +148,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment7" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment7" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -138,7 +157,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment8" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment8" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -147,7 +166,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment9" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment9" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -156,7 +175,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment10" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment10" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -165,7 +184,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment11" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment11" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -174,7 +193,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment12" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment12" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -183,7 +202,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment13" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment13" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -192,7 +211,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment14" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment14" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -201,7 +220,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment15" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment15" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -210,7 +229,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment16" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment16" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -219,7 +238,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment17" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment17" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -228,7 +247,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment18" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment18" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -237,7 +256,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment19" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment19" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -246,7 +265,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment20" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment20" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -255,7 +274,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment21" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment21" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")
@@ -264,7 +283,7 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment22" type="Label" parent="Panel/CommentsLayout"]
+[node name="Comment22" type="Label" parent="CommentsLayout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_uu8hy")

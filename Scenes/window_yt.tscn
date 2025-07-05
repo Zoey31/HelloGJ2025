@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bee0nklru5b1o"]
 
 [ext_resource type="Texture2D" uid="uid://dtim5ce2oo1lf" path="res://Sprites/X.png" id="1_ls744"]
-[ext_resource type="Script" uid="uid://b1tg1xmeonl02" path="res://Scripts/close_button.gd" id="2_1cwpc"]
-[ext_resource type="Script" uid="uid://c5s2d10fr84ud" path="res://Scripts/body_yt.gd" id="3_1cwpc"]
-[ext_resource type="PackedScene" uid="uid://b831w2vrgdfko" path="res://Scenes/body_yt.tscn" id="4_5451c"]
+[ext_resource type="Script" path="res://Scripts/close_button.gd" id="2_1cwpc"]
+[ext_resource type="Script" path="res://Scenes/body_yt.gd" id="3_1cwpc"]
+[ext_resource type="PackedScene" uid="uid://db1n0rfy07tge" path="res://Scenes/body_yt.tscn" id="4_5451c"]
 
 [node name="Window_yt" type="Control"]
 layout_mode = 3
@@ -65,6 +65,8 @@ size_flags_vertical = 3
 script = ExtResource("3_1cwpc")
 
 [node name="BodyYt" parent="Window/ScrollContainer2/Body" instance=ExtResource("4_5451c")]
+clip_contents = false
+custom_minimum_size = Vector2(1800, 2000)
 layout_mode = 2
 
 [connection signal="pressed" from="Window/Topbar_Background/Close_Button" to="Window/Topbar_Background/Close_Button" method="_on_pressed"]

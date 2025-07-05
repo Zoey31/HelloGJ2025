@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjfo88me7c25e"]
+
+[ext_resource type="Script" uid="uid://c33yots32s6bo" path="res://Scripts/score_system.gd" id="1_d2md2"]
+
+[node name="ScoreTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreSystem" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_d2md2")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 88.0
+offset_right = 400.0
+offset_bottom = 108.0
+text = "Add Comment"
+
+[connection signal="pressed" from="Button" to="ScoreSystem" method="_on_button_pressed"]

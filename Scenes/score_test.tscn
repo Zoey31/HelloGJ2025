@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjfo88me7c25e"]
+[gd_scene load_steps=3 format=3 uid="uid://7wtyfmnv8bxv"]
 
 [ext_resource type="Script" uid="uid://c33yots32s6bo" path="res://Scripts/score_system.gd" id="1_d2md2"]
+[ext_resource type="Script" uid="uid://ykgqqkhd8lhp" path="res://Scripts/score_label.gd" id="2_3eyrq"]
 
 [node name="ScoreTest" type="Control"]
 layout_mode = 3
@@ -10,18 +11,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScoreSystem" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ScoreSystem" type="Node" parent="."]
 script = ExtResource("1_d2md2")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 88.0
-offset_right = 400.0
-offset_bottom = 108.0
+offset_left = 382.0
+offset_top = 543.0
+offset_right = 902.0
+offset_bottom = 689.0
+theme_override_font_sizes/font_size = 50
 text = "Add Comment"
 
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 1322.0
+offset_bottom = 521.0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Comment..."
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 736.0
+offset_right = 958.0
+offset_bottom = 929.0
+theme_override_font_sizes/font_size = 50
+script = ExtResource("2_3eyrq")
+
+[connection signal="score_changed" from="ScoreSystem" to="ScoreLabel" method="_on_score_changed"]
 [connection signal="pressed" from="Button" to="ScoreSystem" method="_on_button_pressed"]
+[connection signal="text_changed" from="TextEdit" to="ScoreSystem" method="_on_text_edit_text_changed"]

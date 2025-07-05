@@ -1,9 +1,13 @@
-extends Control
+extends Node
 
-var curr_score = 0
+var curr_score = 0.0
 var scores = []
 var multi_combo = 1.0
 
+@onready var text_edit = $"../TextEdit"
+@onready var score_display = $"../ScoreLabel"
+
+signal score_changed(score: float)
 
 func _ready():
 	print("")
@@ -13,17 +17,19 @@ func add_score_for_comment(comment):
 	
 	var len_score = len(comment) * 0.1
 	var vul_no_score = get_no_vulgars(comment) * 2
-	print("NO Ladnych slow:" + str(vul_no_score))
+	print("NO Ladnych slow: " + str(vul_no_score))
 	
 	var non_words = get_no_nonwords(comment)
-	print("NO nie-slow" + str(non_words))
+	print("NO nie-slow: " + str(non_words))
 	
 	curr_score += ((len_score + vul_no_score) * multi_combo) - non_words 
 
 	print(curr_score)
+	score_changed.emit(curr_score)
 
 func _on_button_pressed() -> void:
-	add_score_for_comment("To chuj iduahidhwakdnwzkdnbzwdj jduwahdkuwadnbkan hdawukdwhak")
+	add_score_for_comment(text_edit.text)
+	
 
 func get_no_nonwords(comment):
 	var no_nonwords = 0
@@ -53,6 +59,7 @@ func get_no_vulgars(comment):
 		if is_vulgar(word):
 			no_vulgarims += 1
 	return no_vulgarims
+
 
 func is_vulgar(word):
 	return word in ['fuck', 'shit', 'cock', 'whore',

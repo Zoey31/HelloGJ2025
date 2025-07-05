@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://db1n0rfy07tge"]
+[gd_scene load_steps=8 format=3 uid="uid://db1n0rfy07tge"]
 
 [ext_resource type="Texture2D" uid="uid://cx7i3pba275y1" path="res://Sprites/play2.png" id="1_tqbe2"]
 [ext_resource type="PackedScene" uid="uid://da5w4764yvdlc" path="res://Scenes/image.tscn" id="2_uu8hy"]
 [ext_resource type="Texture2D" uid="uid://efbl7qer4bgt" path="res://Sprites/youtube.png" id="2_vm16r"]
 [ext_resource type="FontFile" uid="uid://c4a7umcsg8k5r" path="res://Fonts/8bit-tiny-retro.ttf" id="3_uu8hy"]
 [ext_resource type="Script" uid="uid://b7n5ple6r427a" path="res://Scripts/random_title.gd" id="4_o4nu8"]
+[ext_resource type="Script" uid="uid://dd4elkrxrmtgn" path="res://Scenes/next_video.gd" id="6_o4nu8"]
+[ext_resource type="Script" uid="uid://qfyhdnbp3hwa" path="res://Scripts/comments_layout.gd" id="7_t2emw"]
 
 [node name="BodyYt" type="Panel"]
 clip_contents = true
@@ -63,6 +65,7 @@ offset_right = 1757.0
 offset_bottom = 522.0
 texture_normal = ExtResource("1_tqbe2")
 stretch_mode = 0
+script = ExtResource("6_o4nu8")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -86,6 +89,7 @@ placeholder_text = "Type your comment here"
 wrap_mode = 1
 
 [node name="CommentsLayout" type="VBoxContainer" parent="."]
+clip_contents = true
 layout_mode = 2
 offset_left = 20.0
 offset_top = 1130.0
@@ -93,6 +97,7 @@ offset_right = 1940.0
 offset_bottom = 3524.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_t2emw")
 
 [node name="Comment" type="Label" parent="CommentsLayout"]
 layout_mode = 2
@@ -103,191 +108,4 @@ text = "ANON2137
 
 ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
 
-[node name="Comment2" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment3" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment4" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment5" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment6" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment7" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment8" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment9" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment10" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment11" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment12" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment13" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment14" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment15" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment16" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment17" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment18" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment19" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment20" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment21" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
-
-[node name="Comment22" type="Label" parent="CommentsLayout"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_uu8hy")
-theme_override_font_sizes/font_size = 32
-text = "ANON2137
-
-ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

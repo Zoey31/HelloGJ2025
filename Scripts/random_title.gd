@@ -64,5 +64,5 @@ var titles = [
 ]
 
 func _ready() -> void:
-	var random_title = randi_range(0, len(titles))
+	var random_title = randi_range(0, len(titles) - 1)
 	$".".text = titles[random_title]

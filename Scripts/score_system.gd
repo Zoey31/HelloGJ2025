@@ -1,7 +1,7 @@
 extends Node
 
 var curr_score = 0.0
-var scores = []
+var last_comments = []
 var multi_combo = 1.0
 
 @onready var text_edit = $"../TextEdit"
@@ -13,7 +13,12 @@ func _ready():
 	print("")
 
 func add_score_for_comment(comment):
-	scores.append(comment)
+	if comment in last_comments:
+		print("Repeat comment")
+		return
+	if len(last_comments) > 5:
+		last_comments.pop_front()
+	last_comments.append(comment)
 	
 	var len_score = len(comment) * 0.1
 	var vul_no_score = get_no_vulgars(comment) * 2
@@ -33,8 +38,6 @@ func _on_button_pressed() -> void:
 
 func get_no_nonwords(comment):
 	var no_nonwords = 0
-	var no_spaces = comment.count(" ")
-	var leteter_duplicats = []
 	for word in comment.split(" "):
 		if len(word) > 10:
 			no_nonwords += len(word)

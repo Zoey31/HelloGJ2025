@@ -31,6 +31,7 @@ offset_right = 1322.0
 offset_bottom = 521.0
 theme_override_font_sizes/font_size = 50
 placeholder_text = "Comment..."
+wrap_mode = 1
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 0

@@ -15,6 +15,7 @@ func _ready():
 func add_score_for_comment(comment):
 	if comment in last_comments:
 		print("Repeat comment")
+		multi_combo = 1.0
 		return
 	if len(last_comments) > 5:
 		last_comments.pop_front()

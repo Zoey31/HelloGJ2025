@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://7wtyfmnv8bxv"]
+[gd_scene load_steps=4 format=3 uid="uid://7wtyfmnv8bxv"]
 
 [ext_resource type="Script" uid="uid://c33yots32s6bo" path="res://Scripts/score_system.gd" id="1_d2md2"]
 [ext_resource type="Script" uid="uid://ykgqqkhd8lhp" path="res://Scripts/score_label.gd" id="2_3eyrq"]
+
+[sub_resource type="GDScript" id="GDScript_3eyrq"]
+script/source = "extends Control
+func _ready() -> void:
+	get_child(3).text = \"fffff\""
 
 [node name="ScoreTest" type="Control"]
 layout_mode = 3
@@ -10,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_3eyrq")
 
 [node name="ScoreSystem" type="Node" parent="."]
 script = ExtResource("1_d2md2")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bee0nklru5b1o"]
+[gd_scene load_steps=5 format=3 uid="uid://bee0nklru5b1o"]
 
 [ext_resource type="Texture2D" uid="uid://dtim5ce2oo1lf" path="res://Sprites/X.png" id="1_ls744"]
 [ext_resource type="Script" uid="uid://b1tg1xmeonl02" path="res://Scripts/close_button.gd" id="2_1cwpc"]
-[ext_resource type="Script" uid="uid://c5s2d10fr84ud" path="res://Scenes/body_yt.gd" id="3_1cwpc"]
+[ext_resource type="Script" uid="uid://c5s2d10fr84ud" path="res://Scripts/body_yt.gd" id="3_1cwpc"]
+[ext_resource type="PackedScene" uid="uid://b831w2vrgdfko" path="res://Scenes/body_yt.tscn" id="4_5451c"]
 
 [node name="Window_yt" type="Control"]
 layout_mode = 3
@@ -49,94 +50,21 @@ offset_right = 1920.0
 offset_bottom = 1070.0
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Window"]
-clip_contents = false
+[node name="ScrollContainer2" type="ScrollContainer" parent="Window"]
 layout_mode = 2
-offset_left = 89.0
-offset_top = 208.0
-offset_right = 2009.0
-offset_bottom = 208.0
-scale = Vector2(0.486409, 9.70065)
+offset_left = 4.0
+offset_top = 120.0
+offset_right = 1869.0
+offset_bottom = 1054.0
 
-[node name="Body" type="VBoxContainer" parent="Window/ScrollContainer"]
+[node name="Body" type="VBoxContainer" parent="Window/ScrollContainer2"]
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("3_1cwpc")
 
-[node name="ColorRect" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
+[node name="BodyYt" parent="Window/ScrollContainer2/Body" instance=ExtResource("4_5451c")]
 layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect8" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect9" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect10" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect11" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect12" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect13" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect14" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect15" type="ColorRect" parent="Window/ScrollContainer/Body"]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-color = Color(1, 0, 1, 1)
 
 [connection signal="pressed" from="Window/Topbar_Background/Close_Button" to="Window/Topbar_Background/Close_Button" method="_on_pressed"]

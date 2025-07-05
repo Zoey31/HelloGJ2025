@@ -1,0 +1,274 @@
+[gd_scene load_steps=4 format=3 uid="uid://b831w2vrgdfko"]
+
+[ext_resource type="Texture2D" uid="uid://cx7i3pba275y1" path="res://Sprites/play2.png" id="1_tqbe2"]
+[ext_resource type="Texture2D" uid="uid://efbl7qer4bgt" path="res://Sprites/youtube.png" id="2_vm16r"]
+[ext_resource type="FontFile" uid="uid://c4a7umcsg8k5r" path="res://Fonts/8bit-tiny-retro.ttf" id="3_uu8hy"]
+
+[node name="BodyYt" type="PanelContainer"]
+offset_right = 1920.0
+offset_bottom = 4192.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 1920.0
+offset_bottom = 4202.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.877616, 0.877616, 0.877616, 1)
+
+[node name="Logo" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 4.0
+offset_right = 467.0
+offset_bottom = 194.0
+texture = ExtResource("2_vm16r")
+
+[node name="VideoContainer" type="Control" parent="Panel"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = 157.0
+offset_right = 1158.0
+offset_bottom = 766.0
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1301.0
+offset_top = 174.0
+offset_right = 1757.0
+offset_bottom = 522.0
+texture_normal = ExtResource("1_tqbe2")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 786.0
+offset_right = 262.0
+offset_bottom = 855.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Comments"
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 868.0
+offset_right = 1099.0
+offset_bottom = 1076.0
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Type your comment here"
+wrap_mode = 1
+
+[node name="CommentsLayout" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 1130.0
+offset_right = 1940.0
+offset_bottom = 3524.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Comment" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment2" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment3" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment4" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment5" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment6" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment7" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment8" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment9" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment10" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment11" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment12" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment13" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment14" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment15" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment16" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment17" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment18" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment19" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment20" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment21" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"
+
+[node name="Comment22" type="Label" parent="Panel/CommentsLayout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uu8hy")
+theme_override_font_sizes/font_size = 32
+text = "ANON2137
+
+ASDFJKIsnnkajjnlaknlknlknlknlknlknlnlknlknlknlknlknlnlknlinlinoinoinoinoinoinoinonubkjbkjb"

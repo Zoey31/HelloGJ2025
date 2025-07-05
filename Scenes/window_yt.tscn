@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bee0nklru5b1o"]
+
+[ext_resource type="Texture2D" uid="uid://dtim5ce2oo1lf" path="res://Sprites/X.png" id="1_ls744"]
+[ext_resource type="Script" uid="uid://b1tg1xmeonl02" path="res://Scripts/close_button.gd" id="2_1cwpc"]
+
+[node name="Window_yt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" type="VBoxContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1070.0
+theme_override_constants/separation = 0
+
+[node name="Topbar_Background" type="ColorRect" parent="Window"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 10
+color = Color(0.121569, 0.113725, 0.615686, 1)
+
+[node name="Close_Button" type="TextureButton" parent="Window/Topbar_Background"]
+layout_mode = 2
+offset_left = 1889.0
+offset_top = 3.0
+offset_right = 1953.0
+offset_bottom = 67.0
+scale = Vector2(0.345825, 0.345825)
+texture_normal = ExtResource("1_ls744")
+script = ExtResource("2_1cwpc")
+
+[node name="Topbar_Layout" type="HBoxContainer" parent="Window"]
+layout_mode = 2
+
+[node name="TextureRect" type="ColorRect" parent="Window"]
+custom_minimum_size = Vector2(100, 1040)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Window"]
+clip_contents = false
+layout_mode = 2
+
+[node name="Body" type="HBoxContainer" parent="Window/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Window/Topbar_Background/Close_Button" to="Window/Topbar_Background/Close_Button" method="_on_pressed"]

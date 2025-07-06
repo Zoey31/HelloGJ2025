@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://7wtyfmnv8bxv"]
 
-[ext_resource type="Script" uid="uid://c33yots32s6bo" path="res://Scripts/score_system.gd" id="1_d2md2"]
+[ext_resource type="PackedScene" uid="uid://bbqnx85e60r7u" path="res://Scenes/score_system.tscn" id="1_3eyrq"]
 [ext_resource type="Script" uid="uid://ykgqqkhd8lhp" path="res://Scripts/score_label.gd" id="2_3eyrq"]
 
 [sub_resource type="GDScript" id="GDScript_3eyrq"]
@@ -17,8 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_3eyrq")
 
-[node name="ScoreSystem" type="Node" parent="."]
-script = ExtResource("1_d2md2")
+[node name="ScoreSystem" parent="." instance=ExtResource("1_3eyrq")]
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -47,7 +46,3 @@ offset_right = 958.0
 offset_bottom = 929.0
 theme_override_font_sizes/font_size = 50
 script = ExtResource("2_3eyrq")
-
-[connection signal="score_changed" from="ScoreSystem" to="ScoreLabel" method="_on_score_changed"]
-[connection signal="pressed" from="Button" to="ScoreSystem" method="_on_button_pressed"]
-[connection signal="text_changed" from="TextEdit" to="ScoreSystem" method="_on_text_edit_text_changed"]

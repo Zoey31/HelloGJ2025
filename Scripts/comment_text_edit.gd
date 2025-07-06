@@ -1,6 +1,6 @@
 extends TextEdit
 
-
+signal text_sent(text: String)
 
 func _on_send_button_pressed() -> void:
-	pass # Replace with function body.
+	text_sent.emit(text)

@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmy1i5ydbg8o1"]
+[gd_scene load_steps=5 format=3 uid="uid://dmy1i5ydbg8o1"]
 
+[ext_resource type="PackedScene" uid="uid://bbqnx85e60r7u" path="res://Scenes/score_system.tscn" id="1_mcvbk"]
 [ext_resource type="Texture2D" uid="uid://ddlp8ik6vrhg5" path="res://Sprites/yt_icon.png" id="1_wmsow"]
 [ext_resource type="Script" uid="uid://dm5xx4amwmv2n" path="res://Scripts/desktop_button.gd" id="2_mcvbk"]
 [ext_resource type="FontFile" uid="uid://c4a7umcsg8k5r" path="res://Fonts/8bit-tiny-retro.ttf" id="3_e8lo5"]
 
 [node name="Desktop" type="Node2D"]
+
+[node name="ScoreSystem" parent="." instance=ExtResource("1_mcvbk")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

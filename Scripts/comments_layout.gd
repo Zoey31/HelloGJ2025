@@ -1,5 +1,7 @@
 extends VBoxContainer
 
+signal user_comment_added(text: String)
+
 var label = preload("res://Scenes/comment.tscn")
 var total_offset = 0
 const offset = 120
@@ -9,8 +11,6 @@ func _ready() -> void:
 	for comment_number in range(number_of_comments):
 		add_random_comment()
 	
-	add_user_comment("TEST")
-
 func add_random_comment():
 	#var label = Label.new()
 	var random_user = randi_range(0, len(random_user_names) - 1)
@@ -30,13 +30,13 @@ func add_user_comment(text: String):
 	var label_inst = label.instantiate()
 	
 	for comment in get_children():
-		print(comment.name)
 		comment.get_child(0).global_position.y += offset
 	total_offset += offset
 	
 	label_inst.get_child(0).text = username + ": \r\n" + text
 	add_child(label_inst)
 	move_child(label_inst, 0)
+	user_comment_added.emit(text)
 	
 var random_user_names = [
 	"PixelPulse",
@@ -193,3 +193,7 @@ var random_comments = [
 "Run that back",
 "How do I unsee this?"
 ]
+
+
+func _on_text_edit_text_sent(text: String) -> void:
+	add_user_comment(text)

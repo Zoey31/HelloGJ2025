@@ -4,8 +4,6 @@ var curr_score = 0.0
 var last_comments = []
 var multi_combo = 1.0
 
-@onready var text_edit = $"../TextEdit"
-@onready var score_display = $"../ScoreLabel"
 
 signal score_changed(score: float)
 
@@ -33,8 +31,9 @@ func add_score_for_comment(comment):
 	print(curr_score)
 	score_changed.emit(curr_score)
 
-func _on_button_pressed() -> void:
-	add_score_for_comment(text_edit.text)
+func _on_comment_added(text: String) -> void:
+	print("ADD SCORE")
+	add_score_for_comment(text)
 	
 
 func get_no_nonwords(comment):

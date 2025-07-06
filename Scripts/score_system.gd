@@ -28,11 +28,11 @@ func add_score_for_comment(comment):
 	
 	curr_score += ((len_score + vul_no_score) * multi_combo) - non_words 
 
+	multi_combo += 0.5
 	print(curr_score)
 	score_changed.emit(curr_score)
 
 func _on_comment_added(text: String) -> void:
-	print("ADD SCORE")
 	add_score_for_comment(text)
 	
 

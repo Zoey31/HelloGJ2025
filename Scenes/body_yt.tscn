@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://db1n0rfy07tge"]
+[gd_scene load_steps=10 format=3 uid="uid://db1n0rfy07tge"]
 
 [ext_resource type="Texture2D" uid="uid://cx7i3pba275y1" path="res://Sprites/play2.png" id="1_tqbe2"]
 [ext_resource type="PackedScene" uid="uid://da5w4764yvdlc" path="res://Scenes/image.tscn" id="2_uu8hy"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://b7n5ple6r427a" path="res://Scripts/random_title.gd" id="4_o4nu8"]
 [ext_resource type="Script" uid="uid://dd4elkrxrmtgn" path="res://Scenes/next_video.gd" id="6_o4nu8"]
 [ext_resource type="Script" uid="uid://qfyhdnbp3hwa" path="res://Scripts/comments_layout.gd" id="7_t2emw"]
+[ext_resource type="Script" uid="uid://doabya6uc5q27" path="res://Scripts/comment_text_edit.gd" id="7_ynucv"]
+[ext_resource type="Texture2D" uid="uid://2cb4u3fxv2mr" path="res://Sprites/box_white.png" id="8_xpxab"]
 
 [node name="BodyYt" type="Panel"]
 clip_contents = true
@@ -69,24 +71,26 @@ script = ExtResource("6_o4nu8")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_top = 786.0
-offset_right = 262.0
-offset_bottom = 855.0
+offset_left = 19.0
+offset_top = 773.0
+offset_right = 281.0
+offset_bottom = 842.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Comments"
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 868.0
-offset_right = 1099.0
-offset_bottom = 1076.0
+offset_left = 20.0
+offset_top = 842.0
+offset_right = 1100.0
+offset_bottom = 1050.0
 theme_override_colors/background_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 placeholder_text = "Type your comment here"
 wrap_mode = 1
+script = ExtResource("7_ynucv")
 
 [node name="CommentsLayout" type="VBoxContainer" parent="."]
 clip_contents = true
@@ -99,4 +103,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_t2emw")
 
+[node name="SendButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1137.0
+offset_top = 857.0
+offset_right = 1331.0
+offset_bottom = 1036.0
+texture_normal = ExtResource("8_xpxab")
+stretch_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="SendButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SendButton/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Send"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="SendButton" to="TextEdit" method="_on_send_button_pressed"]

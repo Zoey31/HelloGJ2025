@@ -1,28 +1,43 @@
 extends VBoxContainer
 
 var label = preload("res://Scenes/comment.tscn")
-var offset = 0
+var total_offset = 0
+const offset = 120
 
 func _ready() -> void:
 	var number_of_comments = randi_range(10,25)
 	for comment_number in range(number_of_comments):
-		add_new_comment()
+		add_random_comment()
+	
+	add_user_comment("TEST")
 
-func add_new_comment():
+func add_random_comment():
 	#var label = Label.new()
 	var random_user = randi_range(0, len(random_user_names) - 1)
 	var random_comment = randi_range(0, len(random_comments) - 1)
 	var label_inst = label.instantiate()
 	
 	label_inst.get_child(0).text = random_user_names[random_user] + ": \r\n" + random_comments[random_comment]
-	label_inst.get_child(0).global_position.y += offset
-	offset += 120
+	label_inst.get_child(0).global_position.y += total_offset
+	total_offset += offset
 	#var font = Font.new()
 	#label.add_theme_font_override("normal_font", )
 	#TODO instantitate comment scene here!
 	add_child(label_inst)
 
-
+func add_user_comment(text: String):
+	const username = "Troll"
+	var label_inst = label.instantiate()
+	
+	for comment in get_children():
+		print(comment.name)
+		comment.get_child(0).global_position.y += offset
+	total_offset += offset
+	
+	label_inst.get_child(0).text = username + ": \r\n" + text
+	add_child(label_inst)
+	move_child(label_inst, 0)
+	
 var random_user_names = [
 	"PixelPulse",
 "ChillCraze",

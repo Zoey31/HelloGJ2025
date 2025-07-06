@@ -9,7 +9,9 @@ signal score_changed(score: float)
 signal combo_changed(combo: float)
 
 func _ready():
-	print("")
+	set_score(0.0)
+	set_combo(1.0)
+	
 	
 func set_score(score: float):
 	curr_score = score

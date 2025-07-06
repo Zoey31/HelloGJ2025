@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmy1i5ydbg8o1"]
+[gd_scene load_steps=6 format=3 uid="uid://dmy1i5ydbg8o1"]
 
 [ext_resource type="PackedScene" uid="uid://bbqnx85e60r7u" path="res://Scenes/score_system.tscn" id="1_mcvbk"]
 [ext_resource type="Texture2D" uid="uid://ddlp8ik6vrhg5" path="res://Sprites/yt_icon.png" id="1_wmsow"]
 [ext_resource type="Script" uid="uid://dm5xx4amwmv2n" path="res://Scripts/desktop_button.gd" id="2_mcvbk"]
 [ext_resource type="FontFile" uid="uid://c4a7umcsg8k5r" path="res://Fonts/8bit-tiny-retro.ttf" id="3_e8lo5"]
+[ext_resource type="Script" uid="uid://ykgqqkhd8lhp" path="res://Scripts/score_label.gd" id="5_e8lo5"]
 
 [node name="Desktop" type="Node2D"]
 
@@ -42,10 +43,51 @@ text = "Youtube"
 
 [node name="Taskbar" type="ColorRect" parent="UI"]
 layout_mode = 2
-offset_top = 1029.0
+offset_top = 994.0
 offset_right = 1920.0
-offset_bottom = 1129.0
+offset_bottom = 1094.0
 size_flags_vertical = 10
 color = Color(0.440336, 0.440336, 0.440336, 1)
 
+[node name="ComboLabel" type="Label" parent="UI/Taskbar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -36.0
+offset_right = -1.0
+offset_bottom = 44.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_e8lo5")
+theme_override_font_sizes/font_size = 60
+text = "x69"
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="UI/Taskbar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -36.0
+offset_right = -203.0
+offset_bottom = 44.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_e8lo5")
+theme_override_font_sizes/font_size = 60
+text = "2137"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_e8lo5")
+
+[connection signal="score_changed" from="ScoreSystem" to="UI/Taskbar/ScoreLabel" method="_on_score_changed"]
 [connection signal="pressed" from="UI/Desktop_Grid/YtButton/TextureButton" to="UI/Desktop_Grid/YtButton/TextureButton" method="_on_pressed"]

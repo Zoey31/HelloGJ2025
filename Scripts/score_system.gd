@@ -6,14 +6,23 @@ var multi_combo = 1.0
 
 
 signal score_changed(score: float)
+signal combo_changed(combo: float)
 
 func _ready():
 	print("")
+	
+func set_score(score: float):
+	curr_score = score
+	score_changed.emit(score)
+	
+func set_combo(combo: float):
+	multi_combo = combo
+	combo_changed.emit(combo)
 
 func add_score_for_comment(comment):
 	if comment in last_comments:
 		print("Repeat comment")
-		multi_combo = 1.0
+		set_combo(1.0)
 		return
 	if len(last_comments) > 5:
 		last_comments.pop_front()
@@ -26,11 +35,9 @@ func add_score_for_comment(comment):
 	var non_words = get_no_nonwords(comment)
 	print("NO nie-slow: " + str(non_words))
 	
-	curr_score += ((len_score + vul_no_score) * multi_combo) - non_words 
-
-	multi_combo += 0.5
-	print(curr_score)
-	score_changed.emit(curr_score)
+	var new_score = curr_score + ((len_score + vul_no_score) * multi_combo) - non_words 
+	set_score(new_score)
+	set_combo(multi_combo + 0.5)
 
 func _on_comment_added(text: String) -> void:
 	add_score_for_comment(text)

@@ -4,7 +4,7 @@ var label = preload("res://Scenes/comment.tscn")
 var offset = 0
 
 func _ready() -> void:
-	var number_of_comments = randi_range(3,15)
+	var number_of_comments = randi_range(10,25)
 	for comment_number in range(number_of_comments):
 		add_new_comment()
 
@@ -14,8 +14,9 @@ func add_new_comment():
 	var random_comment = randi_range(0, len(random_comments) - 1)
 	var label_inst = label.instantiate()
 	
-	label_inst.get_child(0).text = random_user_names[random_user] + ": " + random_comments[random_comment]
-	#label_inst.get_child(0).
+	label_inst.get_child(0).text = random_user_names[random_user] + ": \r\n" + random_comments[random_comment]
+	label_inst.get_child(0).global_position.y += offset
+	offset += 120
 	#var font = Font.new()
 	#label.add_theme_font_override("normal_font", )
 	#TODO instantitate comment scene here!
